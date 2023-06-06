@@ -3,12 +3,9 @@ import WeatherCard from './components/Card'
 
 
 function App() {
-    
 
     return (
-        <div className=' '>
-            <WeatherCard />
-        </div>
+        <WeatherCard />
     )
 }
 

@@ -32,7 +32,7 @@ export default function WeatherCard() {
     }, [inputData])
     
     return (
-        <div className="flex justify-center items-center mt-8">
+        <div className="flex justify-center items-center">
             <div className="bg-[#1d2d44] rounded w-[600px] px-12 pt-12">
                 <ul className="flex justify-center space-x-5">
                     <DefaultCitiesLI setInputData={setInputData} />

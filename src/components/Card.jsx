@@ -8,10 +8,10 @@ import { getCurrentData, getDailyData, getHourlyData } from "../api/weatherAPI"
 
 
 export default function WeatherCard() {
-    const [data, setData] = useState({city: "Bihac"})
+    const [data, setData] = useState({})
     const [hourlyData, setHourlyData] = useState([])
     const [dailyData, setDailyData] = useState([])
-    const [inputData, setInputData] = useState([])
+    const [inputData, setInputData] = useState({city: "Tokyo"})
 
     useEffect(() => {
         async function getData() {
@@ -30,8 +30,7 @@ export default function WeatherCard() {
         }
         getData()
     }, [inputData])
-
-
+    
     return (
         <div className="flex justify-center items-center mt-8">
             <div className="bg-[#1d2d44] rounded w-[600px] px-12 pt-12">
@@ -40,6 +39,11 @@ export default function WeatherCard() {
 
                 </ul>
                 <Inputs setInputData={setInputData} />
+                {!data.current && 
+                    <div>
+                        <h1 className="text-center text-3xl text-white mb-8">Fetching Data...</h1>
+                    </div>
+                }
                 {data.current &&
                     <div>
                         <TimeAndLocation weatherData={data.current} />

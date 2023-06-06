@@ -58,10 +58,10 @@ export async function getCurrentData({ city }) {
 function currentDataFormat(data) {
     const {
         weather: { icon, description },
-        city_name, country_code, datetime, lat, lon, sunrise, sunset, temp, app_temp, wind_spd, ob_time, rh
+        city_name, country_code, datetime, lat, lon, sunrise, sunset, temp, app_temp, wind_spd, ob_time, rh,
     } = data.data[0]
 
-    return { icon, description, city_name, country_code, datetime, lat, lon, sunrise, sunset, temp, wind_spd, ob_time, app_temp, rh }
+    return { icon, description, city_name, country_code, datetime, lat, lon, sunrise, sunset, temp, wind_spd, ob_time, app_temp, rh, }
 }
 
 function hourlyDataFormat(data) {
